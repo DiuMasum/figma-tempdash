@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,4 +59,20 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin/delete-blog/{id}', 'DeleteBlog')->name('deleteblog');
     });
 
+     Route::controller(AuthorController::class)->group(function () {
+        Route::get('/admin/add-author', 'AddAuthor')->name('addauthor');
+        Route::get('/admin/all-author', 'AllAuthor')->name('allauthor');
+        Route::post('/admin/store-author', 'StoreAuthor')->name('storeauthor');
+        Route::get('/admin/edit-author/{id}', 'EditAuthor')->name('editauthor');
+        Route::post('/admin/update-author', 'UpdateAuthor')->name('updateauthor');
+        Route::get('/admin/delete-author/{id}', 'DeleteAuthor')->name('deleteauthor');
+    });
+
 });
+
+Route::controller(NewsletterController::class)->group(function () {
+    Route::get('/emaillist', 'EmaiLlist')->name('emaillist');
+    Route::get('/newsletter', 'Newsletter')->name('newsletter');
+    Route::get('/deleteemail/{id}', 'DeleteEmail')->name('deleteemail');
+});
+

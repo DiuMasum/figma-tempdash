@@ -19,11 +19,13 @@ class CategoryController extends Controller
 
     public function StoreCategory(Request $request){
         $request->validate([
-            'category_name' => 'required|unique:categories'
+            'category_name' => 'required|unique:categories',
+
         ]);
 
         Category::insert([
-            'category_name' => $request->category_name
+            'category_name' => $request->category_name,
+            'slug' => strtolower(str_replace(' ','-', $request->category_name))
         ]);
 
         return redirect()->route('allcategory')->with('message', 'Category Added Successfully!');
@@ -36,14 +38,15 @@ class CategoryController extends Controller
     }
 
     public function UpdateCategory(Request $request){
-        $category_id = $request->category_id;
-
         $request->validate([
             'category_name' => 'required|unique:categories'
         ]);
 
+        $category_id = $request->category_id;
+
         Category::findOrFail($category_id)->update([
-            'category_name' => $request->category_name
+            'category_name' => $request->category_name,
+            'slug' => strtolower(str_replace(' ','-', $request->category_name))
         ]);
 
         return redirect()->route('allcategory')->with('message', 'Category Updated Successfully!');

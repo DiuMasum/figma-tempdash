@@ -137,14 +137,14 @@
 
             <li class="menu-item">
                 <a href="{{ route('addcategory') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bx-plus"></i>
                   <div data-i18n="Analytics">Add Category</div>
                 </a>
               </li>
 
               <li class="menu-item">
                 <a href="{{ route('allcategory') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bx-list-ul"></i>
                   <div data-i18n="Analytics">All Category</div>
                 </a>
               </li>
@@ -155,15 +155,42 @@
 
             <li class="menu-item">
                 <a href="{{ route('addblog') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bx-book-content"></i>
                   <div data-i18n="Analytics">Single Blog Post</div>
                 </a>
               </li>
 
               <li class="menu-item">
                 <a href="{{ route('allblog') }}" class="menu-link">
-                  <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                  <i class="menu-icon tf-icons bx bx-list-ul"></i>
                   <div data-i18n="Analytics">Blog Listing</div>
+                </a>
+              </li>
+
+              <li class="menu-header small text-uppercase"><span class="menu-header-text">Newslatter</span></li>
+            <!-- Cards -->
+
+            <li class="menu-item">
+                <a href="{{ route('emaillist') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-envelope"></i>
+                  <div data-i18n="Analytics">Email List</div>
+                </a>
+              </li>
+
+              <li class="menu-header small text-uppercase"><span class="menu-header-text">Author Info</span></li>
+            <!-- Cards -->
+
+            <li class="menu-item">
+                <a href="{{ route('addauthor') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-user"></i>
+                  <div data-i18n="Analytics">Add Author</div>
+                </a>
+              </li>
+
+              <li class="menu-item">
+                <a href="{{ route('allauthor') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bx-list-ul"></i>
+                  <div data-i18n="Analytics">Author list</div>
                 </a>
               </li>
 
